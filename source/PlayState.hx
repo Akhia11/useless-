@@ -28,10 +28,10 @@ class PlayState extends FlxState
 
 	override public function create()
 	{
-		dad = new FlxSprite(100, 100).loadGraphic(AssetPaths.DADDY_DEAREST__png);
+		dad = new FlxSprite(100, 100).loadGraphic(Paths.image('DADDY_DEAREST__png'));
 		add(dad);
 
-		boyfriend = new FlxSprite(470, 100).loadGraphic(AssetPaths.BOYFRIEND__png);
+		boyfriend = new FlxSprite(470, 100).loadGraphic(Paths.image('BOYFRIEND__png'));
 		add(boyfriend);
 
 		generateSong('assets/data/bopeebo.json');
