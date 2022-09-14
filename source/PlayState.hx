@@ -19,21 +19,12 @@ class PlayState extends FlxState
 
 	private var canHitText:FlxText;
 
-	private var dad:FlxSprite;
-	private var boyfriend:FlxSprite;
-
 	private var notes:FlxTypedGroup<Note>;
 
 	private var strumLine:FlxSprite;
 
 	override public function create()
 	{
-		dad = new FlxSprite(100, 100).loadGraphic(Paths.image('DADDY_DEAREST__png'));
-		add(dad);
-
-		boyfriend = new FlxSprite(470, 100).loadGraphic(Paths.image('BOYFRIEND__png'));
-		add(boyfriend);
-
 		generateSong('assets/data/bopeebo.json');
 
 		safeZoneOffset = (safeFrames / 60) * 1000;
@@ -104,10 +95,6 @@ class PlayState extends FlxState
 		super.update(elapsed);
 
 		Conductor.songPosition = FlxG.sound.music.time;
-
-		if (dad.scale.x > 1)
-		{
-			dad.setGraphicSize(Std.int(dad.width - (FlxG.elapsed * 2)));
 		}
 
 		canHitText.visible = canHit;
@@ -137,8 +124,6 @@ class PlayState extends FlxState
 			{
 				lastBeat += Conductor.crochet;
 				canHitText.text += "\nWEED\nWEED";
-
-				dad.setGraphicSize(Std.int(dad.width * 1.1));
 			}
 		}
 	}
