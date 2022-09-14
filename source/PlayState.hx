@@ -98,7 +98,6 @@ class PlayState extends FlxState
 
 		canHitText.visible = canHit;
 		canHitText.text = 'WWEED' + debugNum;
-                }
 
 		if (canHit)
 		{
