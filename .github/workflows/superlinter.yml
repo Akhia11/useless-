@@ -44,7 +44,18 @@ jobs:
 
       - name: Install Haxelib
         run: |
-          haxelib install hxnodejs
+          haxelib setup C:/haxelib
+          haxelib install hxcpp > nul
+          haxelib install lime
+          haxelib install openfl
+          haxelib --never install flixel
+          haxelib run lime setup flixel
+          haxelib run lime setup
+          haxelib install flixel-tools
+          haxelib install flixel-ui
+          haxelib install flixel-addons
+          haxelib install tjson
+          haxelib install hxjsonast
           haxelib list
 
       - name: Create Version Tag
