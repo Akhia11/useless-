@@ -95,10 +95,10 @@ class PlayState extends FlxState
 		super.update(elapsed);
 
 		Conductor.songPosition = FlxG.sound.music.time;
-		}
 
 		canHitText.visible = canHit;
 		canHitText.text = 'WWEED' + debugNum;
+                }
 
 		if (canHit)
 		{
